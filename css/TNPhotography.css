@@ -1,0 +1,30 @@
+/*top padding for fixed bootstrap top navbar*/
+body {
+	padding-top: 70px;
+	color: #ddd;
+}
+
+/*increased padding for bootstrap fixed navbar*/
+.container-fluid {
+	padding-left: 30px;
+	padding-right: 30px;
+}
+
+/*===============================
+Styles for page-home
+===============================*/
+
+.page-homeGalleryElement {
+	position: relative;
+	display: block; 
+	height: 200px; 
+	overflow: hidden; 
+	background-position: center center; 
+	background-repeat: no-repeat; 
+	background-size: cover;
+}
+
+.galleryContainer { 
+	padding-right: 0;
+	padding-left: 0; 
+}
