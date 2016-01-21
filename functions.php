@@ -3,7 +3,7 @@
 	//adding custom styles and scripts
 	function falkscustomtheme_script_enqueue () {
 		//adding custom stylesheet and bootstrap css
-		wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.3.6', 'all' );
+		wp_enqueue_style( 'bootstrap-css', get_template_directory_uri() . '/css/bootstrap.css', array(), '3.3.6', 'all' );
 		wp_enqueue_style( 'customstyle', get_template_directory_uri() . '/css/TNPhotography.css', array(), '1.0.0', 'all' );
 		//adding jquery library, custom javascript and bootstrap js
 		wp_enqueue_script( 'jQueryLibrary', 'https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js', array(), '2.2.0', true );
@@ -60,4 +60,49 @@
 
  	//adding the sidebar	
  	add_action('widgets_init', 'falkscustomtheme_widget_setup' );
+
+ 	//adding custom post type
+ 	function gallery_post_type () {
+ 		$labels = array(
+ 			'name'=> 'gallery',
+ 			'singular_name' => 'gallery',
+ 			'add_new' => 'Add Gallery Item',
+ 			'add_new_item' => 'Add Gallery Item',
+ 			'edit_item' => 'Edit Item',
+ 			'new_item' => 'New Gallery Item',
+ 			'view_item' => 'View Item',
+ 			'search_item' => 'Search Gallery',
+ 			'not_found' => 'No items found.',
+ 			'not_found_in_trash' => 'No items found in trash.',
+ 			'parent_item_colon' => 'Parent Item'
+ 			);
+
+ 		$args = array(
+ 			'labels' => $labels,
+ 			'public' => true,
+ 			'has_archive' => true,
+ 			'publicly_queryable' => true,
+ 			'query_var' => true,
+ 			'rewrite' => true,
+ 			'capability_type' => 'post',
+ 			'hierarchical' => false,
+ 			'supports' => array (
+ 				'title',
+ 				'editor',
+ 				'excerpt',
+ 				'thumbnail',
+ 				'revisions'
+ 				),
+ 			'taxaonimies' => array (
+ 				'catergory',
+ 				'post_tag'
+ 				),
+ 			'menu_position' => 3,
+ 			'exclude_from_search' => false
+ 			);
+
+ 	register_post_type('gallery',$args);
+ 	}
+
+ 	add_action( 'init', 'gallery_post_type' );
  ?>

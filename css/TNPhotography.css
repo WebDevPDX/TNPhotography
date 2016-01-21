@@ -1,3 +1,112 @@
+/*===============================
+Wordpress Core Styles
+===============================*/
+
+.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 5px auto 5px auto;
+}
+
+.alignright {
+    float:right;
+    margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignright {
+    float: right;
+    margin: 5px 0 20px 20px;
+}
+
+a img.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+a img.alignleft {
+    float: left;
+    margin: 5px 20px 20px 0;
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 5px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 5px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 11px;
+    line-height: 17px;
+    margin: 0;
+    padding: 0 4px 5px;
+}
+
+/* Text meant only for screen readers. */
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
 /*top padding for fixed bootstrap top navbar*/
 body {
 	padding-top: 70px;
@@ -13,18 +122,134 @@ body {
 /*===============================
 Styles for page-home
 ===============================*/
+section {
+	margin: 3rem auto;
+}
 
-.page-homeGalleryElement {
-	position: relative;
-	display: block; 
-	height: 200px; 
-	overflow: hidden; 
-	background-position: center center; 
-	background-repeat: no-repeat; 
-	background-size: cover;
+.pageContent {
+	min-height: 250px;
+	background-color: rgba(54,36,9,.7);
+	padding: 15px;
+}
+
+.spacer {
+	clear: both;
+}
+
+.homeGallery {
+	border: 2px solid silver;
 }
 
 .galleryContainer { 
 	padding-right: 0;
 	padding-left: 0; 
+	overflow: hidden;
+	position: relative;
+}
+
+.galleryElementContainer {
+  height: 200px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.page-homeGalleryElement {
+	display: block; 
+	background-position: center center; 
+	background-repeat: no-repeat; 
+	background-size: cover;
+	position: absolute;
+	position: absolute;
+  	height: 100%;
+  	width: 100%;
+  	-moz-transition: all .5s;
+  	-webkit-transition: all .5s;
+  	transition: all .5s;
+ 	-moz-transform: scale(1, 1);
+  	-webkit-transform: scale(1, 1);
+  	transform: scale(1, 1);
+  	z-index: -1;
+}
+
+div.galleryElementContainer:hover > div {
+  -moz-transform: scale(1.3, 1.3);
+  -webkit-transform: scale(1.3, 1.3);
+  transform: scale(1.3, 1.3);
+}
+
+.homeTitleBanner {
+	width: 100%;
+	height: 30%;
+	background-color: rgba(0,0,0,.5);
+}
+
+.galleryElementCategory {
+	color: #fff;
+}
+
+
+
+/*===============================
+Styles for page-gallery
+===============================*/
+
+.titleBanner {
+	width: 100%;
+	height: 20%;
+	background-color: rgba(0,0,0,.5);
+}
+
+.galleryElementTitle {
+	color: #fff;
+	text-decoration: none;
+}
+
+.galleryElementTitle:hover {
+	color: #fff;
+}
+
+
+/*===============================
+Styles for index.php
+===============================*/
+
+.blogElement {
+	height: 200px;
+	padding-top: 2rem;
+	background-repeat: no-repeat;
+	background-size: cover;
+	border: 2px solid silver;
+}
+
+.blogTitle {
+	color: #fff;
+}
+.titleLink {
+	color: #fff;
+}
+
+.secondRowPadding:nth-child(3n-4) {
+	padding-right: 0;
+}
+.secondRowPadding:nth-child(3n-3) {
+	padding-left: 0;
+}
+
+/*===============================
+Styles for single-post
+===============================*/
+
+.singleCategory {
+	margin-top: 4rem;
+}
+
+/*===============================
+Styles for single-gallery
+===============================*/
+
+
+.singleGallery img {
+	width: 33%;
+	margin: 0;
 }
